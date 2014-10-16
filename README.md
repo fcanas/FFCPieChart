@@ -5,6 +5,24 @@
 [![License](https://img.shields.io/cocoapods/l/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 [![Platform](https://img.shields.io/cocoapods/p/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 
+Pie charts in iOS.
+
+```
+// self.topPieChart = [[FFCPieChart alloc] initWithFrame:...];
+// self.middlePieChart = etc.
+
+self.topPieChart.palette = [FFCPieChart grayPalette];
+[self.topPieChart setDataItems:@[@2, @3, @4]];
+
+self.middlePieChart.palette = [FFCPieChart warmPalette];
+[self.middlePieChart setDataItems:@[@1, @2, @3, @4]];
+
+[self.bottomPieChart setDataItems:@[@17, @27, @13, @24, @32, @12, @55]];
+```
+
+<img src="https://raw.github.com/fcanas/FFCPieChart/master/3Charts.png" alt="Vertical Layout" width="321" />
+<!--![](/3Charts.png) -->
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -13,14 +31,14 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-FFCPieChart is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+FFCPieChart will be available through [CocoaPods](http://cocoapods.org). To install
+it until then, add the following line to your Podfile:
 
-    pod "FFCPieChart"
+pod "FFCPieChart", git: 'https://github.com/fcanas/FFCPieChart.git'
 
 ## Author
 
-Fabian Canas, fcanas@gmail.com
+[Fabian Canas](https://github.com/fcanas) ([@fcanas](https://twitter.com/fcanas))
 
 ## License
 
