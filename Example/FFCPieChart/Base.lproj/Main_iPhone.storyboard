@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,23 +19,49 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTC-gP-5j3" customClass="FFCPieChart">
-                                <rect key="frame" x="45" y="168.5" width="230" height="230"/>
+                                <rect key="frame" x="97.5" y="58.5" width="125" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="4Yd-aq-19t"/>
-                                    <constraint firstAttribute="height" constant="230" id="wiD-hh-aqd"/>
+                                    <constraint firstAttribute="width" secondItem="KTC-gP-5j3" secondAttribute="height" multiplier="1:1" id="IhO-hq-rnu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYP-vd-v0z" customClass="FFCPieChart">
+                                <rect key="frame" x="97.5" y="221.5" width="125" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="Xy2-Ld-aks"/>
+                                    <constraint firstAttribute="width" secondItem="eYP-vd-v0z" secondAttribute="height" multiplier="1:1" id="w56-Wm-bxD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOY-bP-yKS" customClass="FFCPieChart">
+                                <rect key="frame" x="97.5" y="383.5" width="125" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QOY-bP-yKS" secondAttribute="height" multiplier="1:1" id="BCe-jF-18W"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KTC-gP-5j3" secondAttribute="centerX" id="5hS-rm-eLP"/>
-                            <constraint firstAttribute="centerY" secondItem="KTC-gP-5j3" secondAttribute="centerY" constant="0.5" id="oNO-wt-TwA"/>
+                            <constraint firstItem="QOY-bP-yKS" firstAttribute="top" secondItem="eYP-vd-v0z" secondAttribute="bottom" constant="37" id="3mF-na-sgG"/>
+                            <constraint firstItem="eYP-vd-v0z" firstAttribute="top" secondItem="KTC-gP-5j3" secondAttribute="bottom" constant="38" id="4od-5J-qAl"/>
+                            <constraint firstItem="eYP-vd-v0z" firstAttribute="width" secondItem="QOY-bP-yKS" secondAttribute="width" id="56s-gy-OAa"/>
+                            <constraint firstItem="KTC-gP-5j3" firstAttribute="centerX" secondItem="eYP-vd-v0z" secondAttribute="centerX" id="TD5-Mk-Zw0"/>
+                            <constraint firstAttribute="centerX" secondItem="eYP-vd-v0z" secondAttribute="centerX" id="atz-vu-k3i"/>
+                            <constraint firstItem="eYP-vd-v0z" firstAttribute="centerX" secondItem="QOY-bP-yKS" secondAttribute="centerX" id="ii3-sy-8r4"/>
+                            <constraint firstItem="KTC-gP-5j3" firstAttribute="width" secondItem="eYP-vd-v0z" secondAttribute="width" id="qQu-Tx-CFa"/>
+                            <constraint firstAttribute="centerY" secondItem="eYP-vd-v0z" secondAttribute="centerY" id="wjW-AE-Qej"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bottomPieChart" destination="QOY-bP-yKS" id="Qqh-bq-7c6"/>
+                        <outlet property="pieChart" destination="eYP-vd-v0z" id="woM-0z-eLp"/>
+                        <outlet property="topPieChart" destination="KTC-gP-5j3" id="BDH-UH-pr6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="157" y="314.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

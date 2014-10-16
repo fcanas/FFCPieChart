@@ -17,13 +17,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.topPieChart.palette = [FFCPieChart grayPalette];
+    [self.topPieChart setDataItems:@[@2, @3, @4]];
+    
+    self.pieChart.palette = [FFCPieChart warmPalette];
+    [self.pieChart setDataItems:@[@1, @2, @3, @4]];
+    
+    [self.bottomPieChart setDataItems:@[@17, @27, @13, @24, @32, @12, @55]];
 }
 
 @end

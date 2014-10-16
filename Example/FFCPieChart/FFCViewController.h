@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FFCPieChart/FFCPieChart.h>
 
 @interface FFCViewController : UIViewController
+@property (weak, nonatomic) IBOutlet FFCPieChart *pieChart;
+@property (weak, nonatomic) IBOutlet FFCPieChart *topPieChart;
+@property (weak, nonatomic) IBOutlet FFCPieChart *bottomPieChart;
 
 @end
