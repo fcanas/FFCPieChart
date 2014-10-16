@@ -128,7 +128,15 @@
         CGContextAddArc(ctx, center.x, center.y, radius, currentAngle, targetAngle, 0);
         CGContextClosePath(ctx);
         
-        CGContextSetFillColorWithColor(ctx, [[self palette][idx % [[self palette] count]] CGColor]);
+        UIColor *color = nil;
+        
+        if ([obj respondsToSelector:@selector(color)]) {
+            color = [obj color];
+        } else {
+            color = [self palette][idx % [[self palette] count]];
+        }
+        
+        CGContextSetFillColorWithColor(ctx, [color CGColor]);
         CGContextDrawPath(ctx, kCGPathFillStroke);
         
         currentAngle = targetAngle;

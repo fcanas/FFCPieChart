@@ -11,8 +11,9 @@
 IB_DESIGNABLE
 
 @protocol FFCPieChartDataItem <NSObject>
-@optional
 - (CGFloat)doubleValue;
+@optional
+- (UIColor *)color;
 @end
 
 @interface FFCPieChart : UIView
