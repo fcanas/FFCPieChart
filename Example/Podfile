@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'FFCPieChart', :exclusive => true do
+  pod "FFCPieChart", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "FFCPieChart", :path => "../"
+
+  pod 'Kiwi'
+  pod 'FBSnapshotTestCase'
+end
