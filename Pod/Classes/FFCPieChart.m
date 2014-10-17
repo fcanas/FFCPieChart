@@ -84,22 +84,18 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    
     if (self) {
         _palette = [FFCPieChart coolPalette];
     }
-
     return self;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    
     if (self) {
         _palette = [FFCPieChart coolPalette];
     }
-    
     return self;
 }
 
@@ -111,14 +107,13 @@
     CGContextSetLineWidth(ctx, 1);
     CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
     
-    CGSize size = self.bounds.size;
-    CGPoint center = CGPointMake(size.width/2., size.height/2.);
-    size.width = size.width - stroke/2.;
-    size.height = size.height - stroke/2.;
+    CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    CGSize size = CGRectInset(self.bounds, stroke/2., stroke/2.).size;
     CGFloat radius = MIN(size.width, size.height)/2.;
     
     CGFloat __block currentAngle = 0;
     CGFloat __block targetAngle;
+    NSUInteger paletteSize = [self.palette count];
     
     [[self dataItems] enumerateObjectsUsingBlock:^(id<FFCPieChartDataItem> obj, NSUInteger idx, BOOL *stop) {
         targetAngle = currentAngle + [obj doubleValue] * 2 * M_PI / _sum;
@@ -133,7 +128,7 @@
         if ([obj respondsToSelector:@selector(color)]) {
             color = [obj color];
         } else {
-            color = [self palette][idx % [[self palette] count]];
+            color = [self palette][idx % paletteSize];
         }
         
         CGContextSetFillColorWithColor(ctx, [color CGColor]);
