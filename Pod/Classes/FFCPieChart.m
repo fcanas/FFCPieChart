@@ -81,25 +81,8 @@
     [self setNeedsDisplay];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        _palette = [FFCPieChart coolPalette];
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        _palette = [FFCPieChart coolPalette];
-    }
-    return self;
-}
-
 - (void)drawRect:(CGRect)rect {
+    NSArray *palette = [self palette]?:[FFCPieChart coolPalette];
     CGFloat stroke = 5;
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -113,7 +96,7 @@
     
     CGFloat __block currentAngle = 0;
     CGFloat __block targetAngle;
-    NSUInteger paletteSize = [self.palette count];
+    NSUInteger paletteSize = [palette count];
     
     [[self dataItems] enumerateObjectsUsingBlock:^(id<FFCPieChartDataItem> obj, NSUInteger idx, BOOL *stop) {
         targetAngle = currentAngle + [obj doubleValue] * 2 * M_PI / _sum;
@@ -128,7 +111,7 @@
         if ([obj respondsToSelector:@selector(color)]) {
             color = [obj color];
         } else {
-            color = [self palette][idx % paletteSize];
+            color = palette[idx % paletteSize];
         }
         
         CGContextSetFillColorWithColor(ctx, [color CGColor]);
