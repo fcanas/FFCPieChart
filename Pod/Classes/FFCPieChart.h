@@ -42,7 +42,7 @@ IB_DESIGNABLE
 + (NSArray *)grayPalette;
 
 /**
- An array of UIColor objects used sequentially to fill in segments of 
+ An array of UIColor objects used sequentially to fill in segments of
  the pie chart for data items that do not specify their own color.
  
  Defaults to @p nil. When @nil, the pie chart acts as though it palette is 
@@ -64,4 +64,13 @@ IB_DESIGNABLE
  @see FFCPieChartDataItem
  */
 @property (nonatomic, copy) NSArray *dataItems;
+
+/**
+ A value between 0 and 1 will add a hole to the chart, making it a donut chart.
+ 
+ @p pieHole represents the ratio of radii between the hole and the outside edge of 
+ the chart. Numbers close to 0.5 are a good place to start for most charts. Values 
+ equal to or greater than 1 are ignored, Values of 0 or less will shut your piehole.
+ */
+@property (nonatomic, assign) CGFloat pieHole;
 @end

@@ -43,6 +43,7 @@
     
     self.pieChart.palette = [FFCPieChart warmPalette];
     [self.pieChart setDataItems:@[@1, @2, @3, @4]];
+    self.pieChart.pieHole = 0.5;
     
     [self.bottomPieChart setDataItems:@[@17, @27, @13, @24, @32, @12, @55]];
 }

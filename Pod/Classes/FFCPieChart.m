@@ -94,6 +94,11 @@
     CGSize size = CGRectInset(self.bounds, stroke/2., stroke/2.).size;
     CGFloat radius = MIN(size.width, size.height)/2.;
     
+    CGFloat innerRadius = 0.;
+    if (_pieHole > 0. && _pieHole < 1.) {
+        innerRadius = radius * _pieHole;
+    }
+    
     CGFloat __block currentAngle = 0;
     CGFloat __block targetAngle;
     NSUInteger paletteSize = [palette count];
@@ -102,7 +107,13 @@
         targetAngle = currentAngle + [obj doubleValue] * 2 * M_PI / _sum;
         
         CGContextBeginPath(ctx);
-        CGContextMoveToPoint(ctx, center.x, center.y);
+        
+        if (innerRadius == 0) {
+            CGContextMoveToPoint(ctx, center.x, center.y);
+        } else {
+            CGContextAddArc(ctx, center.x, center.y, innerRadius, targetAngle, currentAngle, 1);
+        }
+        
         CGContextAddArc(ctx, center.x, center.y, radius, currentAngle, targetAngle, 0);
         CGContextClosePath(ctx);
         
