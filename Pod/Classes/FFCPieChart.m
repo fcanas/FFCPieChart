@@ -71,6 +71,31 @@
              ];
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self == nil) {
+        return nil;
+    }
+    [self setup];
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self == nil) {
+        return nil;
+    }
+    [self setup];
+    return self;
+}
+
+- (void)setup
+{
+    _strokeWidth = 1;
+}
+
 - (void)setDataItems:(NSArray *)dataItems
 {
     _dataItems = [dataItems copy];
@@ -87,8 +112,8 @@
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-    CGContextSetLineWidth(ctx, 1);
-    CGContextSetStrokeColorWithColor(ctx, [UIColor blackColor].CGColor);
+    CGContextSetLineWidth(ctx, self.strokeWidth);
+    CGContextSetStrokeColorWithColor(ctx, (self.strokeColor?:[UIColor blackColor]).CGColor);
     
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     CGSize size = CGRectInset(self.bounds, stroke/2., stroke/2.).size;

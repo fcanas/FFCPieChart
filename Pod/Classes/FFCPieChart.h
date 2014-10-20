@@ -51,6 +51,20 @@ IB_DESIGNABLE
 @property (nonatomic, copy) NSArray *palette;
 
 /**
+ The stroke color of the pieChart.
+ 
+ Defaults to @p nil. When @p nil, appears as black.
+ */
+@property (nonatomic, copy) UIColor *strokeColor;
+
+/**
+ The stroke width of the pieChart.
+ 
+ Defaults to 1
+ */
+@property (nonatomic, assign) CGFloat strokeWidth;
+
+/**
  An array of objects loosely conforming to @p FFCPieChartDataItem. A data item
  need only respond to the @p doubleValue selector.
  

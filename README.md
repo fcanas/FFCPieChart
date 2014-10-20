@@ -11,11 +11,17 @@ Pie charts in iOS.
 // self.topPieChart = [[FFCPieChart alloc] initWithFrame:...];
 // self.middlePieChart = etc.
 
-self.topPieChart.palette = [FFCPieChart grayPalette];
-[self.topPieChart setDataItems:@[@2, @3, @4]];
+DataItem *dataItem = [[DataItem alloc] initWithColor:[UIColor redColor] value:0.4];
 
-self.middlePieChart.palette = [FFCPieChart warmPalette];
-[self.middlePieChart setDataItems:@[@1, @2, @3, @4]];
+self.topPieChart.palette = [FFCPieChart grayPalette];
+[self.topPieChart setDataItems:@[@2, @3, @4, dataItem]];
+self.topPieChart.strokeColor = [UIColor whiteColor];
+self.topPieChart.strokeWidth = 2;
+
+self.pieChart.palette = [FFCPieChart warmPalette];
+[self.pieChart setDataItems:@[@1, @2, @3, @4]];
+self.pieChart.pieHole = 0.5;
+self.pieChart.strokeWidth = 0.5;
 
 [self.bottomPieChart setDataItems:@[@17, @27, @13, @24, @32, @12, @55]];
 ```
