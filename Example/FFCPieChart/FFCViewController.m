@@ -36,10 +36,11 @@
 {
     [super viewDidLoad];
     
-    DataItem *dataItem = [[DataItem alloc] initWithColor:[UIColor redColor] value:0.4];
+    DataItem *dataItem1 = [[DataItem alloc] initWithColor:[UIColor redColor] value:0.4];
+    DataItem *dataItem2 = [[DataItem alloc] initWithColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"texture"]] value:02.5];
     
     self.topPieChart.palette = [FFCPieChart grayPalette];
-    [self.topPieChart setDataItems:@[@2, @3, @4, dataItem]];
+    [self.topPieChart setDataItems:@[@2, @3, @4, dataItem1, dataItem2]];
     self.topPieChart.strokeColor = [UIColor whiteColor];
     self.topPieChart.strokeWidth = 2;
     
