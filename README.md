@@ -7,7 +7,7 @@
 
 Pie charts in iOS.
 
-```
+```objc
 // self.topPieChart = [[FFCPieChart alloc] initWithFrame:...];
 // self.middlePieChart = etc.
 
@@ -43,7 +43,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 FFCPieChart will be available through [CocoaPods](http://cocoapods.org). To install
 it until then, add the following line to your Podfile:
 
-```
+```ruby
 pod "FFCPieChart", git: 'https://github.com/fcanas/FFCPieChart.git'
 ```
 
