@@ -1,6 +1,6 @@
 # FFCPieChart
 
-[![CI Status](http://img.shields.io/travis/Fabian Canas/FFCPieChart.svg?style=flat)](https://travis-ci.org/Fabian Canas/FFCPieChart)
+[![CI Status](http://img.shields.io/travis/fcanas/FFCPieChart.svg?style=flat)](https://travis-ci.org/fcanas/FFCPieChart)
 [![Version](https://img.shields.io/cocoapods/v/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 [![License](https://img.shields.io/cocoapods/l/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 [![Platform](https://img.shields.io/cocoapods/p/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
