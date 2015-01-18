@@ -1,13 +1,13 @@
 # FFCPieChart
 
-[![CI Status](http://img.shields.io/travis/Fabian Canas/FFCPieChart.svg?style=flat)](https://travis-ci.org/Fabian Canas/FFCPieChart)
+[![CI Status](http://img.shields.io/travis/fcanas/FFCPieChart.svg?style=flat)](https://travis-ci.org/fcanas/FFCPieChart)
 [![Version](https://img.shields.io/cocoapods/v/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 [![License](https://img.shields.io/cocoapods/l/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 [![Platform](https://img.shields.io/cocoapods/p/FFCPieChart.svg?style=flat)](http://cocoadocs.org/docsets/FFCPieChart)
 
 Pie charts in iOS.
 
-```
+```objc
 // self.topPieChart = [[FFCPieChart alloc] initWithFrame:...];
 // self.middlePieChart = etc.
 
@@ -43,8 +43,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 FFCPieChart will be available through [CocoaPods](http://cocoapods.org). To install
 it until then, add the following line to your Podfile:
 
-```
-pod "FFCPieChart", git: 'https://github.com/fcanas/FFCPieChart.git'
+```ruby
+pod "FFCPieChart"
 ```
 
 ## Author
