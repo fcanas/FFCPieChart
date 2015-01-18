@@ -44,7 +44,7 @@ FFCPieChart will be available through [CocoaPods](http://cocoapods.org). To inst
 it until then, add the following line to your Podfile:
 
 ```ruby
-pod "FFCPieChart", git: 'https://github.com/fcanas/FFCPieChart.git'
+pod "FFCPieChart"
 ```
 
 ## Author

@@ -1,7 +1,7 @@
 PODS:
-  - FBSnapshotTestCase (1.2)
-  - FFCPieChart (0.1.0)
-  - Kiwi (2.3.0)
+  - FBSnapshotTestCase (1.4)
+  - FFCPieChart (1.0.0)
+  - Kiwi (2.3.1)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -13,8 +13,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 4159bdf235fdae25aa7d813f1452a4f05ad4f9cd
-  FFCPieChart: c7ef11095102003830486c6fbf70abc6461d81e6
-  Kiwi: 54bece5b35564d9b8e03c608d926f1a22fcfc589
+  FBSnapshotTestCase: f9f225b5ba11c8d8c09075590490df16314e4d62
+  FFCPieChart: bdff3ec04b2d9e0cd8c4431ce045966627ca7da7
+  Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0
